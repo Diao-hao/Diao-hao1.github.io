@@ -1,1 +1,92 @@
-hello
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>我 爱 陈 婷 婷</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">亲爱的：</span><br />
+				<span class="space"/><span class="comments">* 在 2019 年 11 月 21 日那天，我们在一起了</span><br />
+				<span class="space"/><span class="comments">* 你就像一汩甘泉，滋润了我的内心，让我觉得人生那么美好</span><br />
+				<span class="space"/><span class="comments">* 像一只小精灵，让我的生活变得丰富多彩</span><br />
+				<span class="space"/><span class="comments">* 生命中最美的相遇，是你；岁月中最美的季节，是你</span><br />
+				<span class="space"/><span class="comments">* 有你陪伴的日子才温馨，有你牵手的生活才幸福</span><br />
+				<span class="space"/><span class="comments">* 今生牵了你的手，只愿一直陪你走。</span><br />
+				我们要永远永远在一起<br />
+				无论以后遇到什么困难，我们都要相互依靠，共同面对<br />
+				或许以后我们会有争吵、分歧，但不管怎么样，都不要忘记对彼此的爱<br />
+				都不要忘记，我们第一次牵手时，那心中的一颤<br />
+				<span class="comments"></span><br />
+				我爱你，<br />
+				<span class="comments">// 想你的时候，夕阳是你，晚霞是你，云中月是你，点点星辰也是你；</span><br />
+				<span class="comments">// 想你的时候，斜风是你，细雨是你，料峭寒是你，滚滚天雷也是你。</span><br />
+				<span class="comments">// 万物皆是你，万物皆非你。</span><br />
+				我喜欢你，是那种一想到你的名字，心里动辄海啸山鸣的喜欢<br />
+				我爱你，真的真的好爱你<br/>
+				我想要和你一起朗读爱的誓言，在所有人的祝福下，一起说出<span class="keyword"> “我愿意” </span><br />
+				亲爱的，余生漫长，我想和你一起度过。<br/>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						亲爱的宝宝,我们已经相恋
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						爱 你 到 永 远 ！<br/>
+						<div class="signature">- 你爱的老公</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2019, 10, 21);
+		together.setHours(48);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
